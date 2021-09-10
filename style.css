@@ -45,7 +45,7 @@ h2, h3, h4, h5, h6, p{
   color: rgb(200, 200, 200);
 }
 
-.nav .nav-items .nav-item a:hover .border-anim{
+a:hover .border-anim{
   visibility: visible;
   animation: border-width .2s;
   animation-fill-mode: forwards;
@@ -122,6 +122,9 @@ h2, h3, h4, h5, h6, p{
 }
 .content-box a{
   color: #58a6ff;
+}
+.content-box a:hover{
+  color: #83bafa;
 }
 
 .github-link{
