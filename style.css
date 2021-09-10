@@ -1,55 +1,61 @@
 html, body{
   margin: 0;
 }
+body{
+  background-color: black;
+}
 a{
   text-decoration: none;
 }
-
+h2, h3, h4, h5, h6, p{
+  color: white;
+  font-family: 'Urbanist', sans-serif;
+}
 .background{ 
-  background-color: white/*url(../images/background-img-1.jpg)*/;
+  background-color: #010409;/*url(../images/background-img-1.jpg)*/;
   background-position: center top;
   background-size: cover;
   height: 100vh;
   width: 100%;
 }
 .nav{
-  display: flex;
-  justify-content: center;
-  background-color: rgb(19, 13, 1);
+  background-color: #161b22;
+  display: inline-flex;
   height: 4rem;
   width: 100%;
-  border-bottom: 1px solid rgb(212, 112, 19);
 }
 .nav .nav-items{
   margin: 0;
+  width: 100%;
   display: inline-flex;
+  flex-direction: row;
   justify-content: center;
   list-style-type: none;
 }
 .nav .nav-items .nav-item{
-  padding: 2rem 30px 0 0;
+  padding: 1.4rem 30px 0 0;
+}
+.nav .nav-items .nav-item a{
   text-align: center;
-  color: whitesmoke;
-  font-size: 1.2rem;
+  color: white;
+  font-size: 1.1rem;
   font-family: 'Urbanist', sans-serif;
 }
-.nav .nav-items .nav-item:hover{
-  cursor: pointer;
-  color: white;
-  text-shadow: 0 0 4px rgb(245, 171, 86);
+.nav .nav-items .nav-item a:hover{
+  color: rgb(200, 200, 200);
 }
-.nav .nav-items .nav-item:hover .border{
-  color: rgb(255, 123, 0);
-  animation: border-width .3s;
+
+.nav .nav-items .nav-item a:hover .border-anim{
+  visibility: visible;
+  animation: border-width .2s;
   animation-fill-mode: forwards;
-  cursor: pointer;
 }
-.border{
+
+.border-anim{
+  visibility: hidden;
   margin: auto;
   height: 2px;
   margin-top: 1px;
-  width: 0;
-  background-color: rgba(255, 123, 0, 0.87);
   border-radius: 35px;
 }
 @keyframes border-width{
@@ -58,6 +64,7 @@ a{
   }
   100%{
     width: 100%;
+    background-image: linear-gradient(to right, #28323f, #ccc, #ccc, #28323f);
   }
 }
 
@@ -72,22 +79,66 @@ a{
   border-left: 2px solid rgba(255, 123, 0, 0.87);
   padding-left: 4px;
 }
-.nav .username:hover{
-  text-shadow: 0 0 30px rgb(255, 255, 255);
+.content-box .content-item-end{
+  margin: 10px;
+  border-bottom: 2px solid #ccc;
 }
 
-.wrapper{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto;
-  background:rgb(231, 231, 231);
-  box-shadow: 0 0 5px 0 rgb(97, 97, 97);
-  width: 70vw;
-  height: 70vh;
+/* Hide scrollbar for Chrome, Safari and Opera */
+.content-box::-webkit-scrollbar {
+  display: none;
 }
-.wrapper .item{
-  color: rgba(255, 123, 0, 0.87);
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.content-box{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.container{
+  margin-top: 30px;
+}
+.row{
+  top: 0;
+  margin: 0;
+}
+.content-box{
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 10px;
+  background-image: linear-gradient(315deg, #28323f, #0a0c0f);
+  box-shadow: 0 0 2px 0 rgb(97, 97, 97);
+  border: 1px solid rgb(73, 72, 72);
+  border-radius: 5px;
+  height: 50rem;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+.content-box img{
+  width: 100%;
+}
+.content-box p{
+  margin-top: 10px;
+  text-align: left;
+}
+.content-box a{
+  color: #58a6ff;
+}
+
+.github-link{
+  position: absolute;
+  display: inline-flex;
+  margin: 0.5rem 0 0 6.5vw;
+  align-items: center;
+  color: white;
+}
+.github-link:hover{
+  color:rgb(200, 200, 200);
+}
+.github-link .fa-github{
+  font-size: 2rem;
+}
+.github-link .github-link-text{
+  font-size: 0.9rem;
   font-family: 'Urbanist', sans-serif;
-  font-size: 1.6rem;
+  margin: 0.9rem 0 0 0;
 }
