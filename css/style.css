@@ -1,9 +1,10 @@
+/* ----- Global elements ----- */
 html, body {
   margin: 0;
 }
 
 body {
-  background-color: #010101;
+  background-color: black;
 }
 
 a {
@@ -15,24 +16,46 @@ h2, h3, h4, h5, h6, p {
   font-family: "Urbanist", sans-serif;
 }
 
+/* --x-- Global elements --x-- */
+/* ----- Navigation -----*/
+.github-link {
+  margin-bottom: 5px;
+  color: white;
+}
+
+.github-link:hover {
+  color: #c8c8c8;
+}
+
+.github-link .fa-github {
+  font-size: 2rem;
+}
+
+.github-link .github-link-text {
+  font-size: 0.9rem;
+  font-family: "Urbanist", sans-serif;
+  margin: 0.9rem 0 0 0;
+}
+
 .nav {
+  display: flex;
+  padding-top: 10px;
   background-color: #161b22;
-  display: inline-flex;
   height: 4rem;
-  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .nav .nav-items {
-  margin: 0;
-  width: 100%;
   display: inline-flex;
   flex-direction: row;
-  justify-content: center;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav .nav-items .nav-item {
-  padding: 1.4rem 30px 0 0;
+  padding: 0 16px;
 }
 
 .nav .nav-items .nav-item a {
@@ -40,6 +63,10 @@ h2, h3, h4, h5, h6, p {
   color: white;
   font-size: 1.1rem;
   font-family: "Urbanist", sans-serif;
+}
+
+.nav .nav-items .nav-item a:hover {
+  color: #c8c8c8;
 }
 
 .nav .nav-items .nav-item a:hover {
@@ -60,6 +87,21 @@ a:hover .border-anim {
   border-radius: 35px;
 }
 
+.mobile-menu {
+  visibility: hidden;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.mobile-menu:hover {
+  color: #c8c8c8;
+}
+
+.hide-element {
+  visibility: visible;
+}
+
 @keyframes border-width {
   0% {
     width: 0%;
@@ -69,18 +111,8 @@ a:hover .border-anim {
     background-image: linear-gradient(to right, #28323f, #ccc, #ccc, #28323f);
   }
 }
-.nav .username .logo {
-  text-align: center;
-  margin: 1rem 0 0 3rem;
-  color: rgba(255, 123, 0, 0.87);
-  font-size: 1.4rem;
-  font-family: "Urbanist", sans-serif;
-  font-weight: 500;
-  border-bottom: 2px solid rgba(255, 123, 0, 0.87);
-  border-left: 2px solid rgba(255, 123, 0, 0.87);
-  padding-left: 4px;
-}
-
+/* --x-- Navigation --x--*/
+/* ----- Content ----- */
 .content-box .content-item-end {
   margin: 10px;
   border-bottom: 2px solid #ccc;
@@ -99,7 +131,7 @@ a:hover .border-anim {
   /* Firefox */
 }
 
-.container {
+.content {
   margin-top: 30px;
 }
 
@@ -138,26 +170,46 @@ a:hover .border-anim {
   color: #83bafa;
 }
 
-.github-link {
-  position: absolute;
-  display: inline-flex;
-  margin: 0.5rem 0 0 6.5vw;
-  align-items: center;
-  color: white;
-}
+/* --x-- Content --x-- */
+/* ----- Responsiveness -----*/
+@media (max-width: 767px) {
+  .nav {
+    justify-content: space-evenly;
+  }
 
-.github-link:hover {
-  color: #c8c8c8;
-}
+  .nav .nav-items {
+    position: relative;
+    flex-direction: column;
+    background-color: #445164;
+    width: 100%;
+  }
 
-.github-link .fa-github {
-  font-size: 2rem;
-}
+  .nav .nav-items .nav-item {
+    margin: 0;
+  }
 
-.github-link .github-link-text {
-  font-size: 0.9rem;
-  font-family: "Urbanist", sans-serif;
-  margin: 0.9rem 0 0 0;
+  .nav .nav-items .nav-item:hover {
+    background-color: #28323f;
+  }
+
+  .mobile-menu {
+    visibility: visible;
+  }
 }
+@media (min-width: 768px) {
+  .nav .nav-items {
+    visibility: visible !important;
+  }
+
+  .mobile-menu {
+    visibility: none;
+  }
+
+  .border-anim {
+    visibility: visible !important;
+  }
+}
+/* --x-- Responsiveness --x--*/
+/*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
