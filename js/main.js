@@ -1,13 +1,13 @@
-var nav = document.getElementsByClassName('nav-items');
-var borderAnim = document.getElementsByClassName('border-anim');
+const mobileMenu = document.getElementById('nav-items');
+const bars = document.getElementById('mobile-menu');
+let toggleMenu = true;
 
-function toggle_menu(){
-  for(var i= 0; i < borderAnim.length; i++)
-    borderAnim[i].style.visibility = "hidden";
-
-  if(nav[0].style.visibility == "hidden"){
-    nav[0].style.visibility = "visible";
+toggleMenu = () => {
+  if(window.innerWidth < 700){
+    if(mobileMenu.style.display == "flex") mobileMenu.style = "display: none;";
+    else mobileMenu.style = "display: flex;";
+    toggleMenu = !toggleMenu;
   }
-  else
-    nav[0].style.visibility = "hidden";
 }
+
+bars.addEventListener('click', toggleMenu);

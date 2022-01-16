@@ -1,84 +1,78 @@
-/* ----- Global elements ----- */
+/* ----- Global ----- */
 html, body {
   margin: 0;
+  box-sizing: border-box;
 }
-
 body {
-  background-color: black;
+  background-color: #060607;
 }
-
 a {
   text-decoration: none;
 }
-
 h2, h3, h4, h5, h6, p {
   color: white;
   font-family: "Urbanist", sans-serif;
 }
+nav{
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  background-color: #161b22;
+}
+/* --!-- Global elements --!-- */
 
-/* --x-- Global elements --x-- */
 /* ----- Navigation -----*/
-.github-link {
-  margin-bottom: 5px;
+#nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 15px;
+  width: 90%;
+  margin: 0 auto;
+}
+#github-link {
+  width: 100px;
+  display: flex;
+  margin: 0 0 0 15px;
   color: white;
 }
-
-.github-link:hover {
+#github-link:hover, .nav-item a:hover {
   color: #c8c8c8;
+  transition: 0.3s;
 }
-
-.github-link .fa-github {
+#github-link .fa-github {
   font-size: 2rem;
 }
-
-.github-link .github-link-text {
+#github-link #github-link-text {
   font-size: 0.9rem;
   font-family: "Urbanist", sans-serif;
-  margin: 0.9rem 0 0 0;
+  padding-top: 15px;
 }
-
-.nav {
+#nav-items {
+  padding: 0;
   display: flex;
-  padding-top: 10px;
-  background-color: #161b22;
-  height: 4rem;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.nav .nav-items {
-  display: inline-flex;
   flex-direction: row;
   list-style-type: none;
-  margin: 0;
+  position: relative;
+  right: 0;
+  top: 0;
+  background-color: transparent;
   padding: 0;
 }
-
-.nav .nav-items .nav-item {
+.nav-item {
   padding: 0 16px;
 }
-
-.nav .nav-items .nav-item a {
+.nav-item a {
   text-align: center;
   color: white;
   font-size: 1.1rem;
   font-family: "Urbanist", sans-serif;
 }
-
-.nav .nav-items .nav-item a:hover {
-  color: #c8c8c8;
-}
-
-.nav .nav-items .nav-item a:hover {
-  color: #c8c8c8;
-}
-
 a:hover .border-anim {
   visibility: visible;
   animation: border-width 0.2s;
   animation-fill-mode: forwards;
 }
-
 .border-anim {
   visibility: hidden;
   margin: auto;
@@ -86,22 +80,21 @@ a:hover .border-anim {
   margin-top: 1px;
   border-radius: 35px;
 }
-
-.mobile-menu {
-  visibility: hidden;
+#mobile-menu {
+  display: none; 
   color: white;
   font-size: 26px;
   cursor: pointer;
+  z-index: 100;
+  border: none;
+  background-color: transparent;
 }
-
 .mobile-menu:hover {
   color: #c8c8c8;
 }
-
 .hide-element {
   visibility: visible;
 }
-
 @keyframes border-width {
   0% {
     width: 0%;
@@ -111,18 +104,17 @@ a:hover .border-anim {
     background-image: linear-gradient(to right, #28323f, #ccc, #ccc, #28323f);
   }
 }
-/* --x-- Navigation --x--*/
+/* --!-- Navigation --!--*/
+
 /* ----- Content ----- */
 .content-box .content-item-end {
-  margin: 10px;
+  margin: 10px 10px 70px 10px;
   border-bottom: 2px solid #ccc;
 }
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 .content-box::-webkit-scrollbar {
   display: none;
 }
-
 /* Hide scrollbar for IE, Edge and Firefox */
 .content-box {
   -ms-overflow-style: none;
@@ -130,16 +122,14 @@ a:hover .border-anim {
   scrollbar-width: none;
   /* Firefox */
 }
-
 .content {
-  margin-top: 30px;
+  padding-top: 30px;
+  height: 100%;
 }
-
 .row {
   top: 0;
   margin: 0;
 }
-
 .content-box {
   margin-bottom: 30px;
   text-align: center;
@@ -152,64 +142,48 @@ a:hover .border-anim {
   overflow-y: scroll;
   scroll-behavior: smooth;
 }
-
 .content-box img {
   width: 100%;
 }
-
 .content-box p {
   margin-top: 10px;
   text-align: left;
 }
-
 .content-box a {
   color: #58a6ff;
 }
-
 .content-box a:hover {
   color: #83bafa;
 }
-
 /* --x-- Content --x-- */
+
 /* ----- Responsiveness -----*/
-@media (max-width: 767px) {
-  .nav {
-    justify-content: space-evenly;
+@media only screen and (max-width: 700px) {
+  #github-link-text{
+    display: none;
   }
-
-  .nav .nav-items {
-    position: relative;
-    flex-direction: column;
-    background-color: #445164;
-    width: 100%;
+  #mobile-menu{
+    display: block;
   }
-
-  .nav .nav-items .nav-item {
-    margin: 0;
-  }
-
-  .nav .nav-items .nav-item:hover {
-    background-color: #28323f;
-  }
-
-  .mobile-menu {
-    visibility: visible;
+  #nav-items{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #161b22;
+    padding: 12px;
   }
 }
-@media (min-width: 768px) {
-  .nav .nav-items {
-    visibility: visible !important;
+@media only screen and (min-width: 699px) {
+  #github-link-text{
+    display: flex;
   }
-
-  .mobile-menu {
-    visibility: none;
-  }
-
-  .border-anim {
-    visibility: visible !important;
+  #nav-items{
+    display: flex;
   }
 }
 /* --x-- Responsiveness --x--*/
+
 /*# sourceMappingURL=style.css.map */
 
 /*# sourceMappingURL=style.css.map */
