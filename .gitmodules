@@ -1,3 +1,6 @@
 [submodule "Komputer-store_assignment-4"]
 	path = Komputer-store_assignment-4
 	url = https://github.com/achieuw/Komputer-store_assignment-4.git
+[submodule "Vue_Trivia-game"]
+	path = Vue_Trivia-game
+	url = https://github.com/achieuw/Vue_Trivia-game
